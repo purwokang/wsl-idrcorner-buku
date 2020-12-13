@@ -2,13 +2,13 @@ import React from 'react'
 
 import Buku from './Buku'
 
-const DaftarBuku = ({ daftarbuku }) => {
+const DaftarBuku = ({ daftarbuku, bukuDipilih }) => {
 
     // console.log(props.daftarbuku); // mengintip isi props.daftarbuku
 
     const renderList = daftarbuku.map(buku => {
         return (
-            <Buku key={buku.id} buku={buku} />
+            <Buku bukuDipilih={bukuDipilih} key={buku.id} buku={buku} />
         )
     })
 

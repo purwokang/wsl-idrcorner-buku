@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DaftarBuku from './DaftarBuku'
+import DetailBuku from './DetailBuku'
 
 export class App extends Component {
 
@@ -16,6 +17,13 @@ export class App extends Component {
         bukuTerpilih: null
     }
 
+    bukuDipilih = (buku) => {
+        this.setState({
+            bukuTerpilih: buku
+        })
+    }
+
+
     render() {
         return (
             <div className='container' >
@@ -23,10 +31,10 @@ export class App extends Component {
                 <h1>DAFTAR BUKU</h1>
                 <div className="row">
                     <div className="col-lg-8">
-                        <DaftarBuku daftarbuku={this.state.daftarBuku} />
+                        <DaftarBuku bukuDipilih={this.bukuDipilih} daftarbuku={this.state.daftarBuku} />
                     </div>
                     <div className="col-lg-4">
-                        Detail Buku
+                        <DetailBuku buku={this.state.bukuTerpilih} />
                     </div>
                 </div>
 

@@ -1,12 +1,19 @@
 import React from 'react';
 
-const Buku = ({ buku }) => {
+const Buku = ({ buku, bukuDipilih }) => {
     // console.log(buku); // intip isi buku
+
+    const onClickHandler = () => {
+        bukuDipilih(buku)
+    }
+
     return (
-        <div className='list-group-item'>
+        <div className='list-group-item'
+            onClick={onClickHandler}
+            style={{ cursor: 'pointer' }} >
             <h3>{buku.judul}</h3>
             <p>Pengarang: {buku.pengarang}</p>
-        </div>
+        </div >
     )
 }
 
